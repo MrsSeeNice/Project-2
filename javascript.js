@@ -1,8 +1,8 @@
-document.getElementById('search-form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const searchTerm = document.getElementById('search-input').value;
-    const apiKey = 'YOUR_GIPHY_API_KEY';
-    const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchTerm)}&limit=12`;
+async function fetchThanksgivingGifs() {
+    const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+    const query = 'thanksgiving';
+    const limit = 12;
+    const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(query)}&limit=${limit}`;
 
     try {
         const response = await fetch(apiUrl);
@@ -19,4 +19,4 @@ document.getElementById('search-form').addEventListener('submit', async function
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-});
+}
