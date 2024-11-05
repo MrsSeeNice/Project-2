@@ -1,22 +1,20 @@
-async function fetchThanksgivingGifs() {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
-    const query = 'thanksgiving';
-    const limit = 12;
-    const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(query)}&limit=${limit}`;
+document.getElementById('searchButton').addEventListener('click', function() {
+    const query = document.getElementById('searchInput').value;
+    const apiKey = 'YOUR_API_KEY_HERE';  // Replace with your Giphy API key
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=10`;
 
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        const resultsContainer = document.getElementById('results');
-        resultsContainer.innerHTML = ''; // Clear previous results
-
-        data.data.forEach(gif => {
-            const img = document.createElement('img');
-            img.src = gif.images.fixed_height.url;
-            img.alt = gif.title;
-            resultsContainer.appendChild(img);
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';  
+            data.data.forEach(gif => {
+                const img = document.createElement('img');
+                img.src = gif.images.fixed_height.url;
+                resultsDiv.appendChild(img);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
         });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
-}
+});
