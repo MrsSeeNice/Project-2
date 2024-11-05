@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIPHY Search Engine</title>
+    <title>Giphy Search Engine</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <h1 id="site-title">Giphy Search</h1>
+        <nav>
+            <a href="#">Thanksgiving</a>
+            <a href="#">Christmas</a>
+            <a href="#">New Year's Day</a>
+        </nav>
+    </header>
+    <main>
+        <form id="search-form">
+            <input type="search" id="search-input" placeholder="Search for gifs" required>
+            <button type="submit">Search</button>
+        </form>
+        <section id="results"></section>
+    </main>
+    <script src="main.js"></script>
 </body>
 </html>

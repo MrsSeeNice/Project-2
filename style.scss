@@ -1,0 +1,64 @@
+$font-family: 'Poppins', sans-serif; // Replace with a new Google Font
+
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+
+    input[type="search"] {
+        margin-right: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    button {
+        padding: 0.5rem;
+    }
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#results img {
+    width: 100%;
+    max-width: 300px;
+}
+
+@media (max-width: 320px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    #results {
+        display: block;
+    }
+
+    #results img {
+        width: 100%;
+    }
+}
