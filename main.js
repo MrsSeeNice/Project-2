@@ -1,13 +1,13 @@
 document.getElementById('searchButton').addEventListener('click', function() {
     const query = document.getElementById('searchInput').value;
-    const apiKey = 'YOUR_API_KEY_HERE';  // Replace with your Giphy API key
+    const apiKey = 'R7FMzJWUKB51dnNFSgOEo2FxyJ0yKvs8';  
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=10`;
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
             const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '';  
+            resultsDiv.innerHTML = 'R7FMzJWUKB51dnNFSgOEo2FxyJ0yKvs8';  
             data.data.forEach(gif => {
                 const img = document.createElement('img');
                 img.src = gif.images.fixed_height.url;
