@@ -1,6 +1,6 @@
 document.getElementById('searchButton').addEventListener('click', function() {
     const query = document.getElementById('searchInput').value;
-    const apiKey = 'R7FMzJWUKB51dnNFSgOEo2FxyJ0yKvs8';  
+    const apiKey = 'vZgfW0vjYSFqqEH2BX01rqExIjHi5buQ' ;  
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=10`;
 
     fetch(url)

@@ -44,9 +44,10 @@ form {
     max-width: 300px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
     header {
         flex-direction: column;
+        align-items: center;
     }
 
     nav a {
