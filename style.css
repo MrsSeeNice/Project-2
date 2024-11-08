@@ -1,49 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-$font-family: 'Poppins', sans-serif; 
-
 body {
-    font-family: $font-family;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif; /* Use the imported font */
+    background: linear-gradient(135deg, #FF9C54, #FF6B6B, #FFADAD); /* Thanksgiving warm tones */
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-header {
+/* Add a subtle overlay to enhance the background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://example.com/festive-background.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3; /* Adjust opacity to make it subtle */
+    z-index: -1;
+}
+
+.header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    margin-top: 20px;
 }
 
-nav a {
-    margin-right: 1rem;
-    text-decoration: none;
+.title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-form {
+/* Container for search bar and holiday links */
+.search-links-container {
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
-
-    input[type="search"] {
-        margin-right: 0.5rem;
-        padding: 0.5rem;
-    }
-
-    button {
-        padding: 0.5rem;
-    }
-}
-
-#results {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-#results img {
+    align-items: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 800px;
+}
+
+/* Search bar on the left */
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Holiday links on the right */
+.holiday-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.holiday-link {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.holiday-link:hover {
+    color: #FFA500;
+    text-decoration: underline;
+}
+
+/* Basic search box and button styling */
+.search-box {
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    outline: none;
+    font-size: 18px;
+}
+
+.search-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #2E2E2E;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #FFA500;
+}
+/* Adding a glow effect to add holiday sparkle */
+.glow-effect {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 16px rgba(255, 255, 255, 0.7);
+}
+
+/* Festive footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFF;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 0;
 }
 
 @media (max-width: 768px) {
